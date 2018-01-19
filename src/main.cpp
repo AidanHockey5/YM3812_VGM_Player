@@ -362,6 +362,7 @@ void StartupSequence(StartUpProfile sup, String request = "")
         preCalced7nDelays[i] = ((1000.0 / (sampleRate/(float)i+1))*1000);
       }
     }
+    delay(1000);
 }
 
 void setup()
@@ -439,7 +440,7 @@ void loop()
     //delay(150);
     return;
   }
-  //delay(1000);
+  
   cmd = GetByte();
   if(tmp == false)
   {
@@ -448,7 +449,6 @@ void loop()
   }
   switch(cmd)
   {
-
     case 0x5A:
     {
       uint8_t addr = GetByte();
@@ -523,7 +523,7 @@ void loop()
       break;
       
       default:
-      Serial.print("Defauled command: "); Serial.println(cmd, HEX);
+      Serial.print("Defaulted command: "); Serial.println(cmd, HEX);
       Serial.print("At: "); Serial.println(vgm.position()-1, HEX);
       break;
 
