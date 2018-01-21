@@ -45,6 +45,7 @@ r: | Request song
 
 A song request is formatted as follows: ```r:mySongFile.vgm```
 Once a song request is sent through the serial console, an attempt will be made to open that song file. The file must exist on the Teensy's SD card, and spelling/capitalization must be correct.
+Need an easy-to-use serial console? [I've made one here.](https://github.com/AidanHockey5/OpenArduinoSerialConsole)
 
 # Schematic
 ![Schematic](https://raw.githubusercontent.com/AidanHockey5/YM3812_VGM_Player/master/Schematics/OPL2_VGM_Player.sch.png)
