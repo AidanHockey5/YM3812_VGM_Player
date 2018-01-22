@@ -1,4 +1,4 @@
-update=1/20/2018 6:06:19 PM
+update=1/21/2018 4:23:08 PM
 version=1
 last_client=kicad
 [pcbnew]
@@ -61,3 +61,4 @@ LibName29=valves
 LibName30=C:/Users/Aidan/Documents/KiCad_Custom_Libs/Teensy_With_VGM
 LibName31=C:/Users/Aidan/Documents/KiCad_Custom_Libs/Yamaha_FM
 LibName32=Oscillators
+LibName33=switches

@@ -31,6 +31,7 @@ LIBS:valves
 LIBS:Teensy_With_VGM
 LIBS:Yamaha_FM
 LIBS:Oscillators
+LIBS:switches
 LIBS:OPL2_VGM_Player-cache
 EELAYER 25 0
 EELAYER END
@@ -68,12 +69,12 @@ $EndComp
 $Comp
 L GND #PWR01
 U 1 1 5A63F073
-P 1600 1300
-F 0 "#PWR01" H 1600 1050 50  0001 C CNN
-F 1 "GND" H 1600 1150 50  0000 C CNN
-F 2 "" H 1600 1300 50  0001 C CNN
-F 3 "" H 1600 1300 50  0001 C CNN
-	1    1600 1300
+P 1150 1300
+F 0 "#PWR01" H 1150 1050 50  0001 C CNN
+F 1 "GND" H 1150 1150 50  0000 C CNN
+F 2 "" H 1150 1300 50  0001 C CNN
+F 3 "" H 1150 1300 50  0001 C CNN
+	1    1150 1300
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
@@ -512,4 +513,111 @@ Wire Wire Line
 Connection ~ 9600 2650
 Text Notes 9800 2250 0    60   ~ 0
 Mono Audio Out\n
+$Comp
+L SW_Push_Dual SW1
+U 1 1 5A6533ED
+P 4850 5000
+F 0 "SW1" H 4900 5100 50  0000 L CNN
+F 1 "PREV" H 4850 4730 50  0000 C CNN
+F 2 "Buttons_Switches_THT:SW_TH_Tactile_Omron_B3F-10xx" H 4850 5200 50  0001 C CNN
+F 3 "" H 4850 5200 50  0001 C CNN
+	1    4850 5000
+	1    0    0    -1  
+$EndComp
+$Comp
+L SW_Push_Dual SW2
+U 1 1 5A653422
+P 5650 5000
+F 0 "SW2" H 5700 5100 50  0000 L CNN
+F 1 "RAND" H 5650 4730 50  0000 C CNN
+F 2 "Buttons_Switches_THT:SW_TH_Tactile_Omron_B3F-10xx" H 5650 5200 50  0001 C CNN
+F 3 "" H 5650 5200 50  0001 C CNN
+	1    5650 5000
+	1    0    0    -1  
+$EndComp
+$Comp
+L SW_Push_Dual SW3
+U 1 1 5A653455
+P 6450 5000
+F 0 "SW3" H 6500 5100 50  0000 L CNN
+F 1 "NEXT" H 6450 4730 50  0000 C CNN
+F 2 "Buttons_Switches_THT:SW_TH_Tactile_Omron_B3F-10xx" H 6450 5200 50  0001 C CNN
+F 3 "" H 6450 5200 50  0001 C CNN
+	1    6450 5000
+	1    0    0    -1  
+$EndComp
+$Comp
+L SW_Push_Dual SW4
+U 1 1 5A65348C
+P 7200 5000
+F 0 "SW4" H 7250 5100 50  0000 L CNN
+F 1 "LOOP" H 7200 4730 50  0000 C CNN
+F 2 "Buttons_Switches_THT:SW_TH_Tactile_Omron_B3F-10xx" H 7200 5200 50  0001 C CNN
+F 3 "" H 7200 5200 50  0001 C CNN
+	1    7200 5000
+	1    0    0    -1  
+$EndComp
+$Comp
+L SW_Push_Dual SW5
+U 1 1 5A6534C1
+P 7950 5000
+F 0 "SW5" H 8000 5100 50  0000 L CNN
+F 1 "SHUF" H 7950 4730 50  0000 C CNN
+F 2 "Buttons_Switches_THT:SW_TH_Tactile_Omron_B3F-10xx" H 7950 5200 50  0001 C CNN
+F 3 "" H 7950 5200 50  0001 C CNN
+	1    7950 5000
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR022
+U 1 1 5A65371D
+P 8150 5200
+F 0 "#PWR022" H 8150 4950 50  0001 C CNN
+F 1 "GND" H 8150 5050 50  0000 C CNN
+F 2 "" H 8150 5200 50  0001 C CNN
+F 3 "" H 8150 5200 50  0001 C CNN
+	1    8150 5200
+	1    0    0    -1  
+$EndComp
+Text GLabel 4650 5000 0    60   Input ~ 0
+PREV
+Text GLabel 5450 5000 0    60   Input ~ 0
+RAND
+Text GLabel 6250 5000 0    60   Input ~ 0
+NEXT
+Text GLabel 7000 5000 0    60   Input ~ 0
+LOOP
+Text GLabel 7750 5000 0    60   Input ~ 0
+SHUF
+Wire Wire Line
+	1600 1300 1150 1300
+Text GLabel 1850 1350 0    60   Input ~ 0
+PREV
+Text GLabel 1850 1450 0    60   Input ~ 0
+RAND
+Text GLabel 1850 1550 0    60   Input ~ 0
+NEXT
+Text GLabel 1850 1650 0    60   Input ~ 0
+LOOP
+Text GLabel 1850 1750 0    60   Input ~ 0
+SHUF
+Wire Wire Line
+	5050 5200 5450 5200
+Wire Wire Line
+	5850 5200 6250 5200
+Wire Wire Line
+	6650 5200 7000 5200
+Wire Wire Line
+	7400 5200 7750 5200
+$Comp
+L GND #PWR?
+U 1 1 5A6559F8
+P 4650 5200
+F 0 "#PWR?" H 4650 4950 50  0001 C CNN
+F 1 "GND" H 4650 5050 50  0000 C CNN
+F 2 "" H 4650 5200 50  0001 C CNN
+F 3 "" H 4650 5200 50  0001 C CNN
+	1    4650 5200
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC

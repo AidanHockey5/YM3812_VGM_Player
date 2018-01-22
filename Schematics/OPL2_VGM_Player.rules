@@ -11,7 +11,7 @@
     (via_costs 50)
     (plane_via_costs 5)
     (start_ripup_costs 100)
-    (start_pass_no 419)
+    (start_pass_no 916)
     (layer_rule F.Cu
       (active on)
       (preferred_direction vertical)
@@ -46,11 +46,17 @@
   (via 
     "Via[0-1]_600:400_um-kicad_default" "Via[0-1]_600:400_um" "kicad_default"
   )
+  (via 
+    "Via[0-1]_600:400_um-+5v" "Via[0-1]_600:400_um" +5v
+  )
   (via_rule
     default "Via[0-1]_600:400_um"
   )
   (via_rule
     "kicad_default" "Via[0-1]_600:400_um-kicad_default"
+  )
+  (via_rule
+    +5v "Via[0-1]_600:400_um-+5v"
   )
   (class default
     (clearance_class default)
@@ -67,19 +73,31 @@
     "Net-(U1-Pad18)" "Net-(U1-Pad19)" "Net-(U1-Pad20)" "Net-(U1-Pad16)" "Net-(U1-Pad15)" "Net-(U1-Pad14)" "YM_IRQ" "YM_IC"
     "YM_A0" "YM_WR" "Net-(U1-Pad25)" "Net-(U1-Pad26)" "Net-(U1-Pad28)" "Net-(U1-Pad29)" "YM_RD" "YM_CS"
     "Net-(U1-Pad32)" "Net-(U1-Pad33)" "Net-(U1-Pad34)" "Net-(U1-Pad35)" "Net-(U1-Pad36)" "Net-(U1-Pad37)" "Net-(U1-Pad13)" "Net-(U1-Pad12)"
-    "Net-(U1-Pad11)" "Net-(U1-Pad10)" "Net-(U1-Pad9)" "Net-(U1-Pad8)" "Net-(U1-Pad7)" "Net-(U1-Pad6)" "Net-(U1-Pad5)" "Net-(U1-Pad4)"
-    "Net-(U1-Pad3)" "Net-(U1-Pad2)" "Net-(U1-Pad38)" "Net-(U1-Pad40)" "Net-(U1-Pad41)" "Net-(U1-Pad42)" D7 D6
-    D5 D4 D3 D2 D1 D0 "Net-(U1-Pad51)" "Net-(U1-Pad52)"
-    +5V "Net-(U1-Pad54)" "Net-(U1-Pad55)" "Net-(U1-Pad56)" "Net-(U1-Pad57)" "Net-(U1-Pad63)" "Net-(U1-Pad64)" "Net-(U1-Pad65)"
-    "Net-(U1-Pad66)" "Net-(U1-Pad67)" "Net-(U1-Pad68)" "Net-(U1-Pad69)" "Net-(U1-Pad70)" "Net-(U1-Pad71)" "Net-(U1-Pad72)" "Net-(U1-Pad73)"
-    "Net-(U1-Pad74)" "Net-(U1-Pad75)" "Net-(U1-Pad76)" "Net-(U1-Pad77)" "Net-(U1-Pad78)" "Net-(U1-Pad79)" "Net-(U1-Pad80)" "Net-(U1-Pad81)"
-    "Net-(U1-Pad82)" "Net-(U1-Pad83)" "Net-(U1-Pad84)" "Net-(U1-Pad85)" "Net-(U1-Pad86)" "Net-(U1-Pad58)" "Net-(U1-Pad59)" "Net-(U1-Pad60)"
-    "Net-(U2-Pad19)" "Net-(U2-Pad8)" "Net-(U2-Pad20)" "Net-(U2-Pad9)" "Net-(U2-Pad21)" "Net-(U2-Pad22)" "Net-(U2-Pad23)" "Net-(U2-Pad24)"
-    BUF "Net-(X1-Pad1)"
+    "Net-(U1-Pad11)" "Net-(U1-Pad10)" "Net-(U1-Pad9)" "Net-(U1-Pad8)" "Net-(U1-Pad7)" "Net-(U1-Pad38)" "Net-(U1-Pad40)" "Net-(U1-Pad41)"
+    "Net-(U1-Pad42)" D7 D6 D5 D4 D3 D2 D1
+    D0 "Net-(U1-Pad51)" "Net-(U1-Pad52)" "Net-(U1-Pad54)" "Net-(U1-Pad55)" "Net-(U1-Pad56)" "Net-(U1-Pad57)" "Net-(U1-Pad63)"
+    "Net-(U1-Pad64)" "Net-(U1-Pad65)" "Net-(U1-Pad66)" "Net-(U1-Pad67)" "Net-(U1-Pad68)" "Net-(U1-Pad69)" "Net-(U1-Pad70)" "Net-(U1-Pad71)"
+    "Net-(U1-Pad72)" "Net-(U1-Pad73)" "Net-(U1-Pad74)" "Net-(U1-Pad75)" "Net-(U1-Pad76)" "Net-(U1-Pad77)" "Net-(U1-Pad78)" "Net-(U1-Pad79)"
+    "Net-(U1-Pad80)" "Net-(U1-Pad81)" "Net-(U1-Pad82)" "Net-(U1-Pad83)" "Net-(U1-Pad84)" "Net-(U1-Pad85)" "Net-(U1-Pad86)" "Net-(U1-Pad58)"
+    "Net-(U1-Pad59)" "Net-(U1-Pad60)" "Net-(U2-Pad19)" "Net-(U2-Pad8)" "Net-(U2-Pad20)" "Net-(U2-Pad9)" "Net-(U2-Pad21)" "Net-(U2-Pad22)"
+    "Net-(U2-Pad23)" "Net-(U2-Pad24)" BUF "Net-(X1-Pad1)" "Net-(SW1-Pad3)" "Net-(SW1-Pad2)" PREV "Net-(SW2-Pad3)"
+    "Net-(SW2-Pad2)" RAND "Net-(SW3-Pad3)" "Net-(SW3-Pad2)" NEXT "Net-(SW4-Pad3)" "Net-(SW4-Pad2)" LOOP
+    "Net-(SW5-Pad3)" "Net-(SW5-Pad2)" SHUF
     (clearance_class "kicad_default")
     (via_rule kicad_default)
     (rule
       (width 250.0)
+    )
+    (circuit 
+      (use_layer F.Cu B.Cu)
+    )
+  )
+  (class +5v
+    +5V
+    (clearance_class +5v)
+    (via_rule +5v)
+    (rule
+      (width 500.0)
     )
     (circuit 
       (use_layer F.Cu B.Cu)
