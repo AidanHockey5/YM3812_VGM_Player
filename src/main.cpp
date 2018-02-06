@@ -13,6 +13,12 @@ const int YM_IRQ = 29;
 
 YM3812 ym3812(YM_Datapins, YM_CS, YM_RD, YM_WR, YM_A0, YM_IRQ, YM_IC);
 
+const int prev_btn = 0;
+const int rand_btn = 1;
+const int next_btn = 2;
+const int loop_btn = 3;
+const int shuf_btn = 4;
+
 SdFatSdio SD;
 File vgm;
 
@@ -367,6 +373,11 @@ void StartupSequence(StartUpProfile sup, String request = "")
 
 void setup()
 {
+    pinMode(prev_btn, INPUT_PULLUP);
+    pinMode(rand_btn, INPUT_PULLUP);
+    pinMode(next_btn, INPUT_PULLUP);
+    pinMode(loop_btn, INPUT_PULLUP);
+    pinMode(shuf_btn, INPUT_PULLUP);
     ym3812.Reset();
     if(!SD.begin())
     {
@@ -421,7 +432,22 @@ void loop()
       break;
     }
   }
-
+  if(!digitalRead(next_btn))
+    StartupSequence(NEXT);
+  if(!digitalRead(prev_btn))
+    StartupSequence(PREVIOUS);
+  if(!digitalRead(rand_btn))
+    StartupSequence(RNG);
+  if(!digitalRead(shuf_btn))
+  {
+    playMode == SHUFFLE ? playMode = IN_ORDER : playMode = SHUFFLE;
+    playMode == SHUFFLE ? Serial.println("SHUFFLE ON") : Serial.println("SHUFFLE OFF");
+  }
+  if(!digitalRead(loop_btn))
+  {
+    playMode == LOOP ? playMode = IN_ORDER : playMode = LOOP;
+    playMode == LOOP ? Serial.println("LOOP ON") : Serial.println("LOOP OFF");   
+  }
   if(loopCount >= nextSongAfterXLoops)
   {
     if(playMode == SHUFFLE)
