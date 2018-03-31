@@ -1,4 +1,4 @@
-update=1/21/2018 4:23:08 PM
+update=Fri 30 Mar 2018 10:09:01 PM PDT
 version=1
 last_client=kicad
 [pcbnew]
@@ -23,8 +23,6 @@ ModuleOutlineThickness=0.150000000000
 [cvpcb]
 version=1
 NetIExt=net
-[general]
-version=1
 [eeschema]
 version=1
 LibDir=
@@ -58,7 +56,14 @@ LibName26=opto
 LibName27=atmel
 LibName28=contrib
 LibName29=valves
-LibName30=C:/Users/Aidan/Documents/KiCad_Custom_Libs/Teensy_With_VGM
-LibName31=C:/Users/Aidan/Documents/KiCad_Custom_Libs/Yamaha_FM
-LibName32=Oscillators
-LibName33=switches
+LibName30=Oscillators
+LibName31=switches
+LibName32=Libraries/ym3812
+LibName33=Libraries/teensy
+LibName34=Libraries/Yamaha_FM
+LibName35=Libraries/VGM_Components_Library
+LibName36=Libraries/jack_trs_6pins
+LibName37=Libraries/Teensy_With_VGM
+LibName38=Libraries/lm358
+[general]
+version=1
